@@ -17,8 +17,12 @@ Not necessary, simply go to [The Deployed App!](https://budget-tracker-3k.heroku
 
 * [Express.js](https://www.npmjs.com/package/express)
 * [Mongoose ODM](https://www.npmjs.com/package/mongoose)
+* [Morgan](https://www.npmjs.com/package/morgan)
+* [Compression](https://www.npmjs.com/package/compression)
 # Benefits
 You can manage your budget both on and offline, with offline changes being saved in the cache to be added to your transaction history when connectivity is restored! How handy!
+
+![screenshot](images/Screenshot%202022-02-05%20115427.jpg)
 # Licenses
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
