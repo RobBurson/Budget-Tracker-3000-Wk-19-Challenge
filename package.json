@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.2",
-    "mongoose": "^6.2.0"
+    "mongoose": "^6.2.0",
+    "morgan": "^1.10.0"
   },
   "name": "budget-tracker-3000-wk-19-challenge",
   "description": "",
