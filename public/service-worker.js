@@ -1,3 +1,4 @@
+const APP_PREFIX = 'Budget-Tracker-';
 const CACHE_NAME = 'budget-tracker-cache';
 const DATA_CACHE_NAME = 'data_cache';
 
@@ -32,18 +33,21 @@ self.addEventListener('install', function(evt) {
 //ACTIVATE
 self.addEventListener('activate', function(evt) {
     evt.waitUntil(
-        caches.keys().then(keyList => {
+        caches.keys().then(function(keyList) {
+            let cacheStoreList = keyList.filter(function(key) {
+                return key.indexOf(APP_PREFIX);
+            });
+            cacheStoreList.push(CACHE_NAME);
             return  Promise.all(
-                keyList.map(key => {
-                    if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+                keyList.map(function(key, i) {
+                    if (cacheStoreList.indexOf(key) === -1) {
                         console.log('Old Cache Key is being removed', key);
-                        return caches.delete(key);
+                        return caches.delete(keyList[i]);
                     }
                 })
             );
         })
     );
-    self.clients.claim();
 });
 
 //INTERCEPT FETCH REQ
